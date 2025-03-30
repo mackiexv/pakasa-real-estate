@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Details - Cozy Studio (For Rent)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="https://i.postimg.cc/D0zHBvww/PAKASA-Logo-white.png" alt="Pakasa Real Estate Logo" />
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Listings ▾</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown">
+              <a href="#">◄ Commercial </a>
+              <ul class="dropdown-submenu">
+                <li><a href="commercial-sale.html">For Sale</a></li>
+                <li><a href="commercial.html">For Rent</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">◄ Residential </a>
+              <ul class="dropdown-submenu">
+                <li><a href="residential-sale.html">For Sale</a></li>
+                <li><a href="residential-rent.html">For Rent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Property Details Section -->
+  <section class="property-details">
+    <div class="container">
+      <!-- Slideshow -->
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="https://i.postimg.cc/j2QDG22D/studio-1.jpg" alt="Property Photo 1" />
+        </div>
+        <div class="mySlides fade">
+          <img src="https://i.postimg.cc/sfpGB6m3/studio-2.jpg" alt="Property Photo 2" />
+        </div>
+        <div class="mySlides fade">
+          <img src="https://i.postimg.cc/dtwkG2Nr/studio-3.jpg" alt="Property Photo 3" />
+        </div>
+        <div class="mySlides fade">
+          <img src="https://i.postimg.cc/d3K7HrsM/studio-4.jpg" alt="Property Photo 4" />
+        </div>
+        <!-- Previous/Next controls -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+      </div>
+
+      <!-- Two-column layout for Property Details and Map -->
+  <!-- Property Details Text -->
+<div class="property-info-map-container">
+    <div class="property-info">
+      <h2>Cozy Studio in the Heart of Downtown Amsterdam</h2>
+      <p><strong>Location:</strong> Amsterdam City Center</p>
+      <p>
+        <strong>Description:</strong> A compact, stylish studio apartment perfect for
+         young professionals and students seeking convenience and charm in an urban setting. It is very close proximity to cafes,
+         restaurants, gym and the Centraal train station.
+      </p>
+      <button id="callBtn">Call Now</button>
+    </div>
+     <!-- Map Section using Static Map -->
+    <div class="property-map">
+      <h3>Property Location</h3>
+      <img id="staticMap" 
+      src="https://maps.googleapis.com/maps/api/staticmap?center=52.377790059984996, 4.897110996156604&zoom=14&size=600x400&key=AIzaSyBE36pKHCbp4F_WhyvEEJtgN1rnpOqbb1k"
+       alt="Property Location Map" />
+    </div>
+  </div>
+  
+     <!-- Schedule Viewing Button -->
+     <button id="scheduleBtn" class="schedule-btn">Schedule Viewing</button>
+
+     <!-- Schedule Viewing Modal -->
+     <div id="scheduleModal" class="modal">
+       <div class="modal-content">
+         <span class="close">&times;</span>
+         <h2>Schedule a Viewing</h2>
+         <form id="scheduleForm">
+           <input type="text" name="name" placeholder="Your Name" required />
+           <input type="email" name="email" placeholder="Your Email" required />
+           <input type="date" name="date" required />
+           <input type="time" name="time" required />
+           <textarea name="message" placeholder="Additional Message (Optional)"></textarea>
+           <button type="submit">Submit</button>
+         </form>
+       </div>
+     </div>
+
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // Menu toggle functionality (if not already in script.js)
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+          navLinks.classList.toggle("active");
+        });
+      } else {
+        console.error("menuToggle or navLinks not found!");
+      }
+    });
+
+    // Call button functionality
+    document.getElementById("callBtn").addEventListener("click", function () {
+      alert("Call us at: +31 688 955 894");
+    });
+
+    // Inquiry form submission handling
+    document.getElementById("inquiryForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      console.log("Inquiry submitted:", Object.fromEntries(formData));
+      alert("Thank you for your inquiry! We'll get back to you soon.");
+      e.target.reset();
+    });
+
+</script>
+<footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Pakasa Real Estate Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

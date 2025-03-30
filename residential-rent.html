@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Residential For Rent - Pakasa Real Estate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="https://i.postimg.cc/D0zHBvww/PAKASA-Logo-white.png" alt="Pakasa Real Estate Logo" />
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Listings ▾</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown">
+              <a href="#">◄ Commercial </a>
+              <ul class="dropdown-submenu">
+                <li><a href="commercial-sale.html">For Sale</a></li>
+                <li><a href="commercial.html">For Rent</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">◄ Residential </a>
+              <ul class="dropdown-submenu">
+                <li><a href="residential-sale.html">For Sale</a></li>
+                <li><a href="residential-rent.html">For Rent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Residential For Rent Listings -->
+  <section class="listings">
+    <div class="container">
+      <h3>Residential Properties For Rent</h3>
+      <div class="property-grid">
+        <!-- Link to your existing residential rent property pages -->
+        <a href="property2.html">
+          <div class="property-card">
+            <img src="https://i.postimg.cc/dVQCc28w/beach-house-2.jpg" alt="2 Bedroom Apartment" />
+            <h4>2 Bedroom Apartment</h4>
+            <p>Near the Beach</p>
+          </div>
+        </a>
+        <a href="property4.html">
+          <div class="property-card">
+            <img src="https://i.postimg.cc/dtwkG2Nr/studio-3.jpg" alt="Cozy Studio" />
+            <h4>Cozy Studio</h4>
+            <p>Downtown Metro City</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Pakasa Real Estate Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

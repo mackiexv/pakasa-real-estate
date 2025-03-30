@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakasa Real Estate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="https://i.postimg.cc/D0zHBvww/PAKASA-Logo-white.png" alt="Pakasa Real Estate Logo" />
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Listings ▾</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown">
+              <a href="#">◄ Commercial </a>
+              <ul class="dropdown-submenu">
+                <li><a href="commercial-sale.html">For Sale</a></li>
+                <li><a href="commercial.html">For Rent</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">◄ Residential </a>
+              <ul class="dropdown-submenu">
+                <li><a href="residential-sale.html">For Sale</a></li>
+                <li><a href="residential-rent.html">For Rent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Find Your Dream Home</h2>
+      <p>Luxury living made accessible.</p>
+    </div>
+  </section>
+
+  <!-- Search / Filter Bar Section -->
+  <section class="property-search">
+    <div class="container">
+      <form id="searchForm">
+        <input type="text" name="location" placeholder="Location" />
+        <select name="propertyType">
+          <option value="">Property Type</option>
+          <option value="residential">Residential</option>
+          <option value="commercial">Commercial</option>
+        </select>
+        <input type="number" name="minPrice" placeholder="Min Price" />
+        <input type="number" name="maxPrice" placeholder="Max Price" />
+        <select name="bedrooms">
+          <option value="">Bedrooms</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4+">4+</option>
+        </select>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+   <!-- Schedule Viewing Button -->
+ <button id="scheduleBtn" class="schedule-btn">Schedule Viewing</button>
+
+ <!-- Schedule Viewing Modal -->
+ <div id="scheduleModal" class="modal">
+   <div class="modal-content">
+     <span class="close">&times;</span>
+     <h2>Schedule a Viewing</h2>
+     <form id="scheduleForm">
+       <input type="text" name="name" placeholder="Your Name" required />
+       <input type="email" name="email" placeholder="Your Email" required />
+       <input type="date" name="date" required />
+       <input type="time" name="time" required />
+       <textarea name="message" placeholder="Additional Message (Optional)"></textarea>
+       <button type="submit">Submit</button>
+     </form>
+   </div>
+ </div>
+  
+ <!-- Property Listings Section -->
+<section class="listings">
+    <div class="container">
+      <h3>Featured Properties</h3>
+      <div class="property-grid">
+        <a href="property.html">
+          <div class="property-card" data-location="city center" data-type="sale" data-price="120000" data-bedrooms="3">
+            <img src="https://i.postimg.cc/t4n62qyH/city-house-4.jpg" alt="3 Bedroom House" />
+            <h4>3 Bedroom House</h4>
+            <p>City Center</p>
+          </div>
+        </a>
+        <a href="property2.html">
+          <div class="property-card" data-location="beach" data-type="rent" data-price="80000" data-bedrooms="2">
+            <img src="https://i.postimg.cc/jjmnfBBS/beach-house-3.jpg" alt="2 Bedroom Apartment" />
+            <h4>2 Bedroom Apartment</h4>
+            <p>Near the Beach</p>
+          </div>
+        </a>
+        <a href="property3.html">
+          <div class="property-card" data-location="exclusive" data-type="sale" data-price="200000" data-bedrooms="4">
+            <img src="https://i.postimg.cc/ZnKm55jB/villa-3.jpg" alt="4 Bedroom Villa" />
+            <h4>4 Bedroom Villa</h4>
+            <p>Exclusive Area</p>
+          </div>
+        </a>
+        <a href="property4.html">
+          <div class="property-card" data-location="downtown" data-type="rent" data-price="60000" data-bedrooms="1">
+            <img src="https://i.postimg.cc/dtwkG2Nr/studio-3.jpg" alt="Cozy Studio" />
+            <h4>Cozy Studio</h4>
+            <p>Downtown Metro City</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" title="Scroll to Top">↑</button>
+
+
+<script>  
+// Inquiry form submission handling
+//    document.getElementById("inquiryForm").addEventListener("submit", function (e) {
+//      e.preventDefault();
+//      const formData = new FormData(e.target);
+//      console.log("Inquiry submitted:", Object.fromEntries(formData));
+//     alert("Thank you for your inquiry! We'll get back to you soon.");
+ //     e.target.reset();
+ //});
+ </script>
+ <script>
+     /* --- Scroll-to-Top Button --- */
+     const scrollToTopBtn = document.getElementById("scrollToTop");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    });
+    scrollToTopBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+ </script>
+
+ <script>
+   /* --- Schedule Viewing Modal Functionality --- */
+   const scheduleModal = document.getElementById("scheduleModal");
+    const scheduleBtn = document.getElementById("scheduleBtn");
+    const closeBtn = document.querySelector(".modal .close");
+    const scheduleForm = document.getElementById("scheduleForm");
+    
+    if (scheduleBtn && scheduleModal) {
+      scheduleBtn.addEventListener("click", function () {
+        scheduleModal.style.display = "block";
+      });
+    }
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        scheduleModal.style.display = "none";
+      });
+    }
+    window.addEventListener("click", function (event) {
+      if (event.target === scheduleModal) {
+        scheduleModal.style.display = "none";
+      }
+    });
+    if (scheduleForm) {
+      scheduleForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(scheduleForm);
+        console.log("Schedule Viewing Submission:", Object.fromEntries(formData));
+        alert("Thank you! Your viewing request has been submitted.");
+        scheduleModal.style.display = "none";
+        scheduleForm.reset();
+      });
+    }
+ </script>
+
+  <script src="script.js"></script>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Pakasa Real Estate Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
