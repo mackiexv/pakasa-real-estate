@@ -85,27 +85,29 @@
        alt="Property Location Map" />
     </div>
   </div>
-  
-      <!-- Schedule Viewing Button -->
-      <button id="scheduleBtn" class="schedule-btn">Schedule Viewing</button>
 
-      <!-- Schedule Viewing Modal -->
-      <div id="scheduleModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Schedule a Viewing</h2>
-          <form id="scheduleForm">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <input type="date" name="date" required />
-            <input type="time" name="time" required />
-            <textarea name="message" placeholder="Additional Message (Optional)"></textarea>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-      </div>
-     
+  <!-- Schedule Viewing Button -->
+  <button id="scheduleBtn" class="schedule-btn">Schedule Viewing</button>
+
+  <!-- Schedule Viewing Modal -->
+  <div id="scheduleModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Schedule a Viewing</h2>
+      <form id="scheduleForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="date" name="date" required />
+        <input type="time" name="time" required />
+        <textarea name="message" placeholder="Additional Message (Optional)"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
   
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" title="Scroll to Top">↑</button>
+
   <script src="script.js"></script>
   <script>
     // Menu toggle functionality (if not already in script.js)
@@ -145,5 +147,6 @@
   </footer>
 
   <script src="./scripts/property.js"></script>
+  <script src="./scripts/scrollToTop.js"></script>
 </body>
 </html>
