@@ -133,72 +133,57 @@
   <button id="scrollToTop" title="Scroll to Top">↑</button>
 
 
-<script>  
-// Inquiry form submission handling
-//    document.getElementById("inquiryForm").addEventListener("submit", function (e) {
-//      e.preventDefault();
-//      const formData = new FormData(e.target);
-//      console.log("Inquiry submitted:", Object.fromEntries(formData));
-//     alert("Thank you for your inquiry! We'll get back to you soon.");
- //     e.target.reset();
- //});
- </script>
- <script>
-     /* --- Scroll-to-Top Button --- */
-     const scrollToTopBtn = document.getElementById("scrollToTop");
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 300) {
-        scrollToTopBtn.style.display = "block";
-      } else {
-        scrollToTopBtn.style.display = "none";
+  <script>  
+    // Inquiry form submission handling
+    //    document.getElementById("inquiryForm").addEventListener("submit", function (e) {
+    //      e.preventDefault();
+    //      const formData = new FormData(e.target);
+    //      console.log("Inquiry submitted:", Object.fromEntries(formData));
+    //     alert("Thank you for your inquiry! We'll get back to you soon.");
+    //     e.target.reset();
+    //});
+  </script>
+  <script>
+    /* --- Schedule Viewing Modal Functionality --- */
+    const scheduleModal = document.getElementById("scheduleModal");
+      const scheduleBtn = document.getElementById("scheduleBtn");
+      const closeBtn = document.querySelector(".modal .close");
+      const scheduleForm = document.getElementById("scheduleForm");
+      
+      if (scheduleBtn && scheduleModal) {
+        scheduleBtn.addEventListener("click", function () {
+          scheduleModal.style.display = "block";
+        });
       }
-    });
-    scrollToTopBtn.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
- </script>
-
- <script>
-   /* --- Schedule Viewing Modal Functionality --- */
-   const scheduleModal = document.getElementById("scheduleModal");
-    const scheduleBtn = document.getElementById("scheduleBtn");
-    const closeBtn = document.querySelector(".modal .close");
-    const scheduleForm = document.getElementById("scheduleForm");
-    
-    if (scheduleBtn && scheduleModal) {
-      scheduleBtn.addEventListener("click", function () {
-        scheduleModal.style.display = "block";
-      });
-    }
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function () {
-        scheduleModal.style.display = "none";
-      });
-    }
-    window.addEventListener("click", function (event) {
-      if (event.target === scheduleModal) {
-        scheduleModal.style.display = "none";
+      if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+          scheduleModal.style.display = "none";
+        });
       }
-    });
-    if (scheduleForm) {
-      scheduleForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = new FormData(scheduleForm);
-        console.log("Schedule Viewing Submission:", Object.fromEntries(formData));
-        alert("Thank you! Your viewing request has been submitted.");
-        scheduleModal.style.display = "none";
-        scheduleForm.reset();
+      window.addEventListener("click", function (event) {
+        if (event.target === scheduleModal) {
+          scheduleModal.style.display = "none";
+        }
       });
-    }
- </script>
+      if (scheduleForm) {
+        scheduleForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(scheduleForm);
+          console.log("Schedule Viewing Submission:", Object.fromEntries(formData));
+          alert("Thank you! Your viewing request has been submitted.");
+          scheduleModal.style.display = "none";
+          scheduleForm.reset();
+        });
+      }
+  </script>
 
   <script src="script.js"></script>
+  <script src="./scripts/scrollToTop.js"></script>
 
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 Pakasa Real Estate Solutions. All rights reserved.</p>
     </div>
   </footer>
-  
 </body>
 </html>
