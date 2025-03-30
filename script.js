@@ -1,65 +1,3 @@
-const slides = document.querySelectorAll("div.mySlides");
-const previousButton = document.querySelector("a.prev");
-const nextButton = document.querySelector("a.next");
-
-let slideIndex = 0;
-let slideInterval = 0;
-
-function playSlideshow() {
-  if (slides) {
-    slides.forEach((slide) => {
-      slide.classList.remove("fadeIn");
-    });
-    slideIndex++;
-
-    if (slideIndex >= slides.length) {
-      slideIndex = 0;
-    }
-
-    slides[slideIndex].classList.add("fadeIn");
-  }
-}
-
-function showPreviousSlide() {
-  clearInterval(slideInterval);
-
-  slides.forEach((slide) => {
-    slide.classList.remove("fadeIn");
-  });
-  slideIndex--;
-
-  if (slideIndex < 0) {
-    slideIndex = slides.length - 1;
-  }
-
-  slides[slideIndex].classList.add("fadeIn");
-  slideInterval = setInterval(playSlideshow, 10000);
-}
-
-function showNextSlide() {
-  clearInterval(slideInterval);
-
-  slides.forEach((slide) => {
-    slide.classList.remove("fadeIn");
-  });
-  slideIndex++;
-
-  if (slideIndex >= slides.length) {
-    slideIndex = 0;
-  }
-
-  slides[slideIndex].classList.add("fadeIn");
-  slideInterval = setInterval(playSlideshow, 10000);
-}
-
-window.addEventListener("load", () => {
-  playSlideshow();
-  slideInterval = setInterval(playSlideshow, 5000);
-});
-
-previousButton.addEventListener("click", showPreviousSlide);
-nextButton.addEventListener("click", showNextSlide);
-
 document.addEventListener("DOMContentLoaded", function () {
   /* --- Schedule Viewing Modal Functionality --- */
   const scheduleModal = document.getElementById("scheduleModal");
@@ -103,19 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.error("menuToggle or navLinks not found!");
   }
-
-  /* --- Scroll-to-Top Button --- */
-  const scrollToTopBtn = document.getElementById("scrollToTop");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 300) {
-      scrollToTopBtn.style.display = "block";
-    } else {
-      scrollToTopBtn.style.display = "none";
-    }
-  });
-  scrollToTopBtn.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
 
   /* --- Call Button --- */
   const callBtn = document.getElementById("callBtn");
